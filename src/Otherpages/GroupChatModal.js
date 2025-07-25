@@ -5,7 +5,7 @@ import { Setchats } from "../Redusers/ChatSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { CreateGroupChat } from "../thunk/MiddlewareFunctions";
 import { toast } from "react-toastify";
-
+import axiosInstacce from "../../src/axiosInstance"
 const GroupChatModal = ({setShowmodal,showmodal,HandlModal}) => {
   const [groupChatName, setGroupChatName] = useState();
   const [selectedUsers, setSelectedUsers] = useState([]);
@@ -19,7 +19,7 @@ const GroupChatModal = ({setShowmodal,showmodal,HandlModal}) => {
   const dispatch=useDispatch()
   const Chats=useSelector((state)=>state.ChatReduser.chats)
   const LoggedUser=useSelector((state)=>state.ChatReduser.loggedUser)
-
+console.log(axiosInstacce,"lka")
 
 
   const uploadImageToCloudinary = async (pics) => {
@@ -81,7 +81,7 @@ const GroupChatModal = ({setShowmodal,showmodal,HandlModal}) => {
           Authorization: `Bearer ${LoggedUser.token}`,
         },
       };
-      const { data } = await axios.get(`/api/user?search=${search}`, config);
+const { data } = await axiosInstacce.get(`/api/user?search=${search}`, config);
       setSearchResult(data);
     } catch (error) {}
   };

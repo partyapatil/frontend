@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import axiosInstance from "../../src/axiosInstance";
 
 // Define types for the component's state
 interface FormState {
@@ -64,9 +65,9 @@ const SignUp: React.FC = () => {
         },
       };
 
-      const { data } = await axios.post<ApiResponse>(
-        "http://localhost:5000/api/user",
-        {
+const { data } = await axiosInstance.post<ApiResponse>(
+  "/api/user",
+  {
           name,
           email,
           password,

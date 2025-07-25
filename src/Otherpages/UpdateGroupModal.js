@@ -5,6 +5,7 @@ import UserListItem from "./UserListItem";
 import { useDispatch, useSelector } from "react-redux";
 import { SetselectedChat } from "../Redusers/ChatSlice";
 import { fetchChatRedux } from "../thunk/MiddlewareFunctions";
+import axiosInstance from "../../src/axiosInstance";
 
 const UpdateGroupModal = ({ handalsetShowupdatemodal, selectedChat }) => {
   const [Searchresult, setSearchResult] = useState();
@@ -40,7 +41,7 @@ let userId = u._id;
           Authorization: `Bearer ${LoggedUser.token}`,
         },
       };
-      const { data } = await axios.put(
+      const { data } = await axiosInstance.put(
         `/api/chat/groupremove`,
         {
           chatId,
@@ -66,7 +67,7 @@ let userId = u._id;
           Authorization: `Bearer ${LoggedUser.token}`,
         },
       };
-      const { data } = await axios.get(`/api/user?search=${search}`, config);
+      const { data } = await axiosInstance.get(`/api/user?search=${search}`, config);
       setSearchResult(data);
     } catch (error) {}
   };
@@ -90,7 +91,7 @@ let userId = u._id;
           Authorization: `Bearer ${LoggedUser.token}`,
         },
       };
-      const { data } = await axios.put(
+      const { data } = await axiosInstance.put(
         `/api/chat/AddTogroup`, // Removed the extra `}` at the end
         {
           chatId,
@@ -116,7 +117,7 @@ let userId = u._id;
           Authorization: `Bearer ${LoggedUser.token}`,
         },
       };
-      const { data } = await axios.put(
+      const { data } = await axiosInstance.put(
         `/api/chat/rename`,
         {
           chatId,

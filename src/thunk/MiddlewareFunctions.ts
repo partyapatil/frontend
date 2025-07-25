@@ -5,6 +5,8 @@ import {
   Setchats,
   SetloggedUser,
 } from "../Redusers/ChatSlice";
+import axiosInstance from "../../src/axiosInstance";
+
 import { Ilogin } from "../Types/Types";
 import { AppDispatch } from "../Store/store";
 import { toast } from "react-toastify";
@@ -28,7 +30,7 @@ export const fetchName = (namee: string) => async (dispatch: any) => {
 
 export const loginUser = (data: Ilogin) => async (dispatch: AppDispatch) => {
   try {
-    const response = await axios.post("/api/login", data);
+const response = await axiosInstance.post("/api/login", data);
     dispatch(setUser(response.data));
     localStorage.setItem("authToken", response.data.token);
     localStorage.setItem(
@@ -53,7 +55,7 @@ export const fetchChatRedux = () => async (dispatch: AppDispatch) => {
   const config = getAuthConfig();
 
   try {
-    const { data } = await axios.get("/api/chat", config);
+    const { data } = await axiosInstance.get("/api/chat", config);
     dispatch(Setchats(data));
     return { status: true };
   } catch (error: any) {
@@ -79,7 +81,7 @@ export const CreateGroupChat =  (name: string, Userdata: any, pic: any, setShowm
       console.log(pic);
       const config = getAuthConfig();
       console.log("w", Userdata);
-      const { data } = await axios.post(
+      const { data } = await axiosInstance.post(
         `/api/chat/group`,
         {
           name: name,

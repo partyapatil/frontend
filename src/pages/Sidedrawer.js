@@ -13,6 +13,8 @@ import NotificationBadge from "react-notification-badge/lib/components/Notificat
 import { useSelector,useDispatch } from "react-redux";
 import { fetchName } from "../thunk/MiddlewareFunctions";
 import {Setchats, SetNotificationre, SetselectedChat} from "../Redusers/ChatSlice"
+import axiosInstance from "../../src/axiosInstance";
+
 const Sidedrawer = ({ loggedUser }) => {
 
   const [showOptions, setShowOptions] = useState(false);
@@ -55,7 +57,7 @@ const Sidedrawer = ({ loggedUser }) => {
         },
       };
 
-      const { data } = await axios.get(`/api/user?search=${chatInput}`, config);
+      const { data } = await axiosInstance.get(`/api/user?search=${chatInput}`, config);
       serChatadata(data);
     } catch (err) {
     }
@@ -68,7 +70,7 @@ const Sidedrawer = ({ loggedUser }) => {
           Authorization: `Bearer ${userRedux.token}`,
         },
       };
-      const { data } = await axios.post(`/api/chat`, { userId }, config);
+      const { data } = await axiosInstance.post(`/api/chat`, { userId }, config);
       if (!ChatsRedux?.find((c) => c._id === data._id)) dispatch(Setchats([data, ...ChatsRedux]));
      dispatch(SetselectedChat(data))
 
