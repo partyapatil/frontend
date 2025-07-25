@@ -17,7 +17,7 @@ export const uploadImageToCloudinary = async (pics, setLoading, setImageUrl) => 
 
     try {
       const res = await fetch( 
-        process.env.Cluodenary ,
+        process.env.REACT_APP_CLOUDINARY_URL ,
         {
           method: "post",
           body: formData,
