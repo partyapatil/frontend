@@ -1,38 +1,1342 @@
 .App {
+  min-height: 100vh;
+  /* background-color: brown;
+    display: flex; */
+}
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Flex container to center the form */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f7fa;
+}
+
+/* Form styling */
+.login-form {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.login-form h3 {
+  margin-bottom: 24px;
+  font-size: 24px;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-group label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-top: 8px;
+}
+
+.form-group input:focus {
+  border-color: #4caf50;
+  outline: none;
+  background-color: #fff;
+}
+
+/* Submit button */
+.form-group button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+  background-color: #45a049;
+}
+
+/* Links */
+.form-footer {
+  margin-top: 20px;
+}
+
+.form-footer a {
+  color: #4caf50;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+.tab {
+  background-color: red;
+  height: 20%;
+  width: 100%;
+}
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f6f9;
+}
+
+/* Signup form style */
+.signup-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.signup-form h3 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Form group and input styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.form-group input:focus {
+  border-color: #4caf50;
+  outline: none;
+  background-color: #fff;
+}
+
+/* Submit button styling */
+.form-group button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-group button:hover {
+  background-color: #45a049;
+}
+
+/* Form footer for additional links */
+.form-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-footer a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+/* //////////////////////////////////Chat Page Style */
+.SerrchDiv {
+  width: 100px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.mainChatcon {
+  width: 100vw;
+  height: 100vh;
+  background-color: tan;
+  position: relative;
+  /* z-index: 1; */
+}
+.header {
+  width: 100%;
+  background-color: grey;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.searchDiv {
+  padding: 0 10px;
+  font-size: 16px;
+}
+.notificationProfile {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  gap: 10px;
+}
+
+.profileContainer {
+  display: flex;
+  align-items: center;
+  background-color: ButtonShadow;
+  padding: 10px 0;
+  height: 38px;
+  border-radius: 10px;
+}
+.profileIcon {
+  width: 40px; /* Set your desired width */
+  height: 40px; /* Set your desired height */
+  border-radius: 50%; /* Makes the image circular */
+  overflow: hidden; /* Ensures the image fits within the div */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileImage {
+  border-radius: 50%;
+  width: 80%;
+  height: 80%;
+  object-fit: cover; /* Ensures the image maintains its aspect ratio */
+}
+
+.dropdownIcon {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.optionsMenu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+  width: 169px;
+}
+
+.optionItem {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: "100px";
+}
+
+.optionItem:last-child {
+  border-bottom: none;
+}
+
+.optionItem:hover {
+  background-color: #f0f0f0;
+}
+
+/* ////////////////////////////////////////////// */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  font-family: 'Arial', sans-serif; /* Use a modern font */
+}
+
+.closeButton {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.closeButton:hover {
+  background: #ff3333;
+}
+
+/* //////////////////////////////Drewar */
+/* Drawer Styling */
+.drawwer {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  height: 100%;
+  width: 300px;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease; /* Smooth transition */
+  z-index: 1000;
+  padding: 20px;
+}
+
+.drawwer.open {
+  left: 0;
+}
+
+/* For main content to be clickable */
+
+.drawerSearchInput {
+  height: 30px;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+.drawerSearchBTN {
+  width: 50px;
+  border-radius: 8px;
+  height: 30px;
+}
+.drawerSearchBTN:hover {
+  background-color: cornflowerblue;
+}
+
+/* ///////////////chatList */
+.chatListContainer {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  max-height: 400px; /* Optional: Add a max height */
+  /* overflow-y: auto;  */
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat Item */
+.chatItem {
+  display: flex;
   align-items: center;
+  gap: 15px;
+  padding: 5px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  border: 1px solid black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chatItem:hover {
+  background-color: #6f5e5e;
+}
+
+/* Chat Avatar */
+.chatAvatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+/* Chat Name */
+.chatName {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px; /* Truncate long names */
+}
+
+.chatSpace {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: calc(100vh - 30px);
+  padding: 20px;
+  margin-left: 320px; /* To account for the drawer when open */
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow-y: auto; /* Scrollable content if overflow occurs */
+  position: relative;
+  z-index: 1; /* Ensure it's below the drawer */
+}
+
+/* Style for Mychats */
+.ChatExits {
+  width: 500px;
+  background-color: #f5f5f5; /* Light background for the chat list */
+  height: 90vh;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 5px;
+  border-radius: 10px; /* Rounded corners for a smoother look */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.NewGroup {
+  border-radius: 20px; /* Rounded button for a modern look */
+  text-align: center;
+  font-weight: 500;
+  width: 150px;
+  padding: 8px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #007bff; /* Blue color for the button */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.NewGroup:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.serChat {
+  border: none;
+  box-sizing: border-box;
+  padding: 5px;
+  margin-top: 10px;
+  max-height: 80vh; 
+  overflow-y: auto; 
+}
+
+.serChat::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar */
+}
+.selectedChat {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px; 
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.selectedChat:hover {
+  background-color: #f0f0f0; /* Subtle highlight on hover */
+}
+
+.selectedChat.active {
+  background-color: #e0f7fa; /* Highlight the active chat */
+  border-color: #4caf50; /* Green border for active chat */
+}
+
+.selectedChat img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%; /* Round avatar */
+  margin-right: 10px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.selectedChat span {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #000; /* Bold name */
+}
+
+.selectedChat .lastMessage {
+  font-size: 14px;
+  color: #666; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.unreadBadge{
+  background-color: #ff5722; 
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  position: relative;
+  top: 0;
+  left: 130px;
+}
+.GroupModalTop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  z-index: 1000;
+  display: none;
+}
+.innerGroup {
+  width: 450px;
+  background-color: #ddd;
+  height: 300px;
+  border-radius: 7px;
+  padding: 5px;
+  position: relative;
+  left: 120px;
+}
+
+/* //Group Create section */
+.groupModalContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.groupModalContainerClose {
+  display: none;
+}
+
+.modalContent {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.inputGroup {
+  margin-bottom: 15px;
+}
+
+.inputGroup label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.inputField {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.memberList {
+  max-height: 120px;
+  overflow-y: scroll;
+  margin-top: 10px;
+}
+
+.selectedMembers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  overflow-y: scroll;
+  max-height: 60px;
+}
+
+.memberChip {
+  display: flex;
+  align-items: center;
+  background-color: #e0f7fa;
+  border: 1px solid #00acc1;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.memberChip span {
+  margin-right: 10px;
+}
+
+.removeButton {
+  background-color: transparent;
+  border: none;
+  color: #f44336;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.removeButton:hover {
+  color: #d32f2f;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.createGroupBtn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.createGroupBtn:hover {
+  background-color: #0056b3;
+}
+
+.closeSpan {
+  position: relative;
+  top: -54px;
+  right: -172px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background-color: red;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
+
+.closeSpan:hover {
+  background-color: #f44336;
+  color: #fff;
+  border-color: #f44336;
+}
+/* //Singel chat */
+/* /////////////////////////////////////////////////////////////// */
+.SingalMain {
+  display: flex;
+  flex-direction: column;
+  height: 89vh; 
+  background-color: steelblue;
+  font-family: Arial, sans-serif;
+  margin-top: 8px;
+  border-radius: 7px;
+  margin-right: 5px;
+  padding: 10px;
+}
+.SingalMainNouserSelected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 89vh; 
+  background-color: white;
+  font-family: Arial, sans-serif;
+  margin-top: 8px;
+  border-radius: 7px;
+  margin-right: 5px;
+  padding: 10px;
+  font-size: 2rem;
+}
+.chatContainer::-webkit-scrollbar {
+  display: none;
+}
+.sinHeader {
+  border-radius: 7px;
+  /* background-color: steelblue; */
+  background-color: #787883;
+  color: white;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sinHeader h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.profileIcon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profileImage {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.chatContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+.messageWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+  max-width: 60%;
+}
+
+.sent {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.received {
+  align-self: flex-start;
+  text-align: left;
+}
+
+.messageBubble {
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.messageBubble.user {
+  background-color: steelblue;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.messageBubble.sender {
+  background-color: #f1f1f1;
+  color: #333;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.messageTime {
+  font-size: 0.75rem;
+  color: gray;
+  margin-top: 2px;
 }
+
+.timeRight {
+  align-self: flex-end;
+}
+
+.timeLeft {
+  align-self: flex-start;
+}
+
+
+.inputSection {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+  border-bottom-left-radius:7px ;
+  border-bottom-right-radius:7px ;
+}
+
+.inputField {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.sendButton {
+  margin-left: 10px;
+  padding: 10px 20px;
+  background-color: steelblue;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sendButton:hover {
+  background-color: #b71c1c;
+}
+
+/* //UpdateGroupModal */
+
+
+.updateGroupModalOuter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.updateGroupModalInner {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  width: 450px; /* Slightly wider for better spacing */
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.groupNameSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee; /* Add a subtle divider */
+  padding-bottom: 15px;
+}
+
+.groupName {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #333; /* Darker text for better readability */
+}
+
+.editIcon {
+  position: relative;
+  left: 130px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #007bff; /* Blue for edit */
+  margin-right: 10px;
+}
+
+.editIcon:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+.membersSection {
+  margin-bottom: 20px;
+}
+
+.membersList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 180px;
+  overflow-y: auto;
+  border: 1px solid #eee; /* Add border for list */
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.memberItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  padding: 8px;
+  background-color: #f9f9f9; /* Light background for each member */
+  border-radius: 5px;
+}
+
+.removeIcon {
+  font-size: 1rem;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #dc3545; /* Red for remove */
+}
+
+.removeIcon:hover {
+  color: #a71d2a; /* Darker red on hover */
+}
+
+.addMemberSection {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.addMemberInput {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.addMemberButton {
+  background-color: #28a745; /* Green for add */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.addMemberButton:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+.closeModalIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  padding-top: 3px;
+  border-radius: 50%;
+  align-items: center;
+  text-align: center;
+}
+.deleteIcon{
+  margin-right: 20px;
+
+}
+.displayG {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: #555;
+}
+.Updatebtn {
+  padding: 5px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+.updateInput {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* //notificationmodal */
+/* .notificationmodal{
+
+
+  position: absolute;
+  background-color: #0056b3;
+padding: 15px;
+border: 1px solid black;
+top:50px;
+width: 200px;
+right: 50px;
+
+} */
+
+
+
+.notificationProfile i {
+  font-size: 24px;
+
+  transition: color 0.3s ease-in-out;
+}
+
+
+
+/* .notificationmodal {
+  position: absolute;
+  background-color: #ffffff;
+  color: #333;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  top: 40px;
+  right:60px;
+  width: 250px;
+  z-index: 1000;
+}
+
+.notificationmodal::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  border-width: 0 10px 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent #ffffff transparent;
+} */
+
+.notificationmodal {
+  position: absolute;
+  background-color: #ffffff;
+  color: #333;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  top: 40px;
+  right:60px;
+  width: 250px;
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.notificationmodal p {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 14px;
+  color: #777;
+}
+
+.notification-item {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #f9fafc;
+  transition: background-color 0.2s;
+}
+
+.notification-item:hover {
+  background-color: #e6f7ff;
+}
+
+.notification-item strong {
+  font-weight: 600;
+  color: #0056b3;
+}
+.groupInfoPage {
+  padding: 20px;
+}
+
+.deleteGroupButton {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.deleteGroupButton:hover {
+  background-color: #e60000;
+}
+
+
+/* ////////////////////////////// */
+
+/* .updateGroupModalOuter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.updateGroupModalInner {
+  background: #fff;
+  padding: 20px;
+  width: 500px;
+  max-width: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+
+
+.groupNameSection {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.groupName {
+  font-size: 20px;
+  font-weight: bold;
+  color: #444;
+}
+
+.editIcon {
+  cursor: pointer;
+  font-size: 18px;
+  color: #007bff;
+  position: relative;
+  left:350px
+}
+
+.editIcon:hover {
+  color: #0056b3;
+}
+
+.membersSection {
+  margin: 20px 0;
+}
+
+.membersList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+}
+
+.memberItem {
+  display: flex;
+  justify-content:left;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+.removeIcon {
+  cursor: pointer;
+  color: #f44336;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.removeIcon:hover {
+  color: #d32f2f;
+}
+
+.addMemberSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.addMemberInput {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.addMemberButton {
+  padding: 10px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.addMemberButton:hover {
+  background: #388e3c;
+}
+
+.display {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.display span {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #e0e0e0;
+  border-radius: 3px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.display span:last-child {
+  margin-right: 0;
+} */
+
+/* /////////////// */
+/* .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 500px;
+  max-width: 90%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.group-name-section {
+  margin: 20px 0;
+}
+
+.group-name-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-group-name {
+  display: flex;
+  gap: 10px;
+}
+
+.members-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.member-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.remove-button {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-member-section {
+  margin-top: 20px;
+}
+
+.add-button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+ */
