@@ -8,8 +8,8 @@ import axios from "axios";
 import UserListItem from "../Otherpages/UserListItem";
 import InsideChatpage from "../Otherpages/InsideChatpage";
 import { getSender } from "../config/Chatlogics";
-import { Effect } from "react-notification-badge";
-import NotificationBadge from "react-notification-badge/lib/components/NotificationBadge";
+import Badge from '@mui/material/Badge';
+
 import { useSelector,useDispatch } from "react-redux";
 import { fetchName } from "../thunk/MiddlewareFunctions";
 import {Setchats, SetNotificationre, SetselectedChat} from "../Redusers/ChatSlice"
@@ -115,28 +115,17 @@ const Sidedrawer = ({ loggedUser }) => {
 
         <div className="notificationProfile">
           <div onClick={() => setnotificationModal(!notificationModal)}>
-          <NotificationBadge
+      <Badge badgeContent={Notification.length} color="error">
+  <i className="fa fa-bell" aria-hidden="true"></i>
+</Badge>
 
-                  count={Notification.length}
-
-                  effect={Effect.ROTATE_X}
-                />
-                  
-          <i
-            className="fa fa-bell"
-            aria-hidden="true"
-            
-          ></i>
         </div>
 
           {notificationModal && (
             <div className="notificationmodal">
               <>
-                <NotificationBadge
-                  count={Notification.length}
+      <Badge badgeContent={Notification.length} color="primary" />
 
-                  effect={Effect.SCALE}
-                />
                 {!Notification.length && <p>No New Messages</p>}
 
                 {Notification.length > 0 && (
