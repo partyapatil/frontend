@@ -7,10 +7,11 @@ import axios from "axios";
 import io from "socket.io-client";
 import { useDispatch, useSelector } from "react-redux";
 import { SetNotificationre } from "../Redusers/ChatSlice";
+import axiosInstacce from "../../src/axiosInstance"
 
 const SingalPage = () => {
   const [get, setget] = useState();
-  const ENDPOINT = "http://localhost:5000";
+  const ENDPOINT ="https://chatapp-backend-eefm.onrender.com";
   const socket = useRef(null);
   const [showUpdatemodal, setShowupdatemodal] = useState(false);
   const [name, setName] = useState("");
@@ -114,7 +115,7 @@ useEffect(()=>{
         headers: { Authorization: `Bearer ${userRedux.token}` },
       };
       setLoading(true);
-      const { data } = await axios.get(
+      const { data } = await axiosInstacce.get(
         `/api/message/${selectedChatRedux._id}`,
         config
       );
@@ -134,7 +135,7 @@ useEffect(()=>{
       const config = {
         headers: { Authorization: `Bearer ${userRedux.token}` },
       };
-      const { data } = await axios.post(
+      const { data } = await axiosInstacce.post(
         "/api/message",
         { content: newMessage, chatId: selectedChatRedux._id },
         config
