@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"; // Import specific icon
 import ProfileModal from "../Otherpages/ProfileModal";
-import { useChatState } from "../context/ChatProvider";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import UserListItem from "../Otherpages/UserListItem";
 import InsideChatpage from "../Otherpages/InsideChatpage";
 import { getSender } from "../config/Chatlogics";
@@ -23,12 +21,10 @@ const Sidedrawer = ({ loggedUser }) => {
   const [chatInput, setchatInput] = useState();
   const [chatData, serChatadata] = useState(["my"]);
   const [notificationModal, setnotificationModal] = useState(false);
-  const name = useSelector((state) => state.ChatReduser.name);
   const userRedux=useSelector((state)=>state.ChatReduser.user)
   const dispatch = useDispatch();
   const ChatsRedux=useSelector((state)=>state.ChatReduser.chats)
-  const LoggedUser=useSelector((state)=>state.ChatReduser.loggedUser)
-  const selectedChatRedux=useSelector((state)=>state.ChatReduser.selectedchat)
+
   const Notification=useSelector((state)=>state.ChatReduser.Notification)
 
   const navigate = useNavigate();
